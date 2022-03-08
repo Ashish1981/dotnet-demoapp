@@ -12,7 +12,7 @@ FROM registry.redhat.io/rhel8/dotnet-60 as build
 WORKDIR /opt/app-root
 # Copy project source files
 COPY src ./src
-
+USER root
 # Restore, build & publish
 WORKDIR /opt/app-root/src
 RUN dotnet restore
@@ -28,9 +28,9 @@ FROM registry.redhat.io/rhel8/dotnet-60-runtime
 # Metadata in Label Schema format (http://label-schema.org)
 LABEL org.label-schema.name    = ".NET Core Demo Web App" \
       org.label-schema.version = "1.5.0" \
-      org.label-schema.vendor  = "Ben Coleman" \
-      org.opencontainers.image.source = "https://github.com/benc-uk/dotnet-demoapp"
-
+      org.label-schema.vendor  = "Ashish Sahoo" \
+      org.opencontainers.image.source = "https://github.com/Ashish1981/dotnet-demoapp"
+# USER root
 # Seems as good a place as any
 WORKDIR /opt/app-root/app
 

@@ -1,0 +1,11 @@
+version: '3'
+services:
+   dotnet-demoapp:
+     build: 
+        context: .
+        dockerfile: Dockerfile
+     image: ashish1981/dotnet-demoapp:latest
+     container_name: dotnet-demoapp
+     ports:
+      - 5000:5000
+     restart: always
